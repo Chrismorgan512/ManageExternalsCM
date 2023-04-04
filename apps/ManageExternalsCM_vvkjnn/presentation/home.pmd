@@ -1,0 +1,74 @@
+{
+  "id": "home",
+  "presentation": {
+    "body": {
+      "type": "section",
+      "horizontal": true,
+      "sorted": true,
+      "children": [
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "richText",
+              "value": "<h1 style=\"color:grey;\"><b>Manage Externals</b></h1>"
+            },
+            {
+              "type": "richText",
+              "value": "<h1>Add Externals</h1>"
+            },
+            {
+              "type": "externalLink",
+              "id": "addExternal",
+              "descriptor": "Add External",
+              "url": "<% '/' + tenant + '/d/home.htmld' %>"
+            }
+          ]
+        },
+        {
+          "type": "section",
+          "children": [
+            {
+              "type": "richText",
+              "value": "<h1> </h1>"
+            },
+            {
+              "type": "richText",
+              "value": "<h1>Change Externals</h1>"
+            },
+            {
+              "type": "externalLink",
+              "id": "reqTransfer",
+              "descriptor": "Request External Worker Transfer",
+              "url": "<% '/' + tenant + '/d/home.htmld' %>"
+            },
+            {
+              "type": "text",
+              "value": "Use this to request the transfer of an External Worker into your team."
+            },
+            {
+              "type": "externalLink",
+              "id": "changeTransfer",
+              "descriptor": "Change External's Transfer",
+              "url": "<% '/' + tenant + '/d/home.htmld' %>"
+            },
+            {
+              "type": "text",
+              "value": "Use this to change External Workers's contract start and end dates. External Worker will automatically be terminated after contract end date."
+            },
+            {
+              "type": "externalLink",
+              "id": "updateContact",
+              "descriptor": "Update External's Contact Details",
+              "url": "<% '/' + tenant + '/d/home.htmld' %>"
+            },
+            {
+              "type": "text",
+              "value": "Use this to change External Worker's mobile phone and external company email address."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

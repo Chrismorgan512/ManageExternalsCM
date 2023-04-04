@@ -1,0 +1,72 @@
+{
+  "id": "changeExternalContract",
+  "endPoints": [
+    {
+      "name" : "externalWorkers",
+      "baseUrlType" : "WQL",
+      "url" : "/data?query=<% ('SELECT workdayID, legalFullName FROM allWorkers WHERE workerIsContingentWorker = true').urlEncode()%>",
+      "authType" : "sso",
+      "isCollection" : true
+    }
+  ],
+  "outboundData": {
+    "outboundEndPoints": [
+      {
+        "name": "launchOrch",
+        "authType": "sso",
+        "url": "https://api.workday.com/orchestrate/v1/apps/ManageExternalsCM_vvkjnn/orchestrations/changeContract/launch",
+        "httpMethod": "POST"
+      }
+    ]
+  },
+  "presentation": {
+    "headerSize": "VPS_DEFAULT",
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "label": "Workday Extend"
+    },
+    "body": {
+      "type": "section",
+      "horizontal": false,
+      "children": [
+        {
+          "type" : "instanceList",
+          "id" : "workerData",
+          "label" : "Workers",
+          "idKey": "workdayID",
+          "displayKey" : "legalFullName",
+          "values" : "<% externalWorkers.data %>",
+          "valueOutBinding": "launchOrch.workerID",
+          "required" : true
+        },
+        {
+          "type": "date",
+          "id": "contractChangeDate",
+          "label": "Effective date:",
+          "value": "<%date:getTodaysDate(date:getDateTimeZone(userTimeZone))%>",
+          "required": "true",
+          "valueOutBinding": "launchOrch.effectiveDate"
+        },
+        {
+          "type": "date",
+          "id": "contractEndDate",
+          "label": "New Contract End Date:",
+          "value": "<%date:getTodaysDate(date:getDateTimeZone(userTimeZone))%>",
+          "required": "true",
+          "valueOutBinding": "launchOrch.endDate"
+        }
+      ]
+    },
+    "footer": {
+      "type": "footer",
+      "children": [
+        {
+          "type": "richText",
+          "enabled": "false",
+          "value": "Powered By Workday Extend"
+        }
+      ]
+    }
+  }
+}

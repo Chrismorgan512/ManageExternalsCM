@@ -1,0 +1,66 @@
+{
+  "id": "addExternal",
+  "endPoints": [
+    {
+      "baseUrlType": "WQL",
+      "name": "workers",
+      "authType": "sso",
+      "url": "<% '/data?query=' + ('SELECT workdayID as id, legalFullName as descriptor from allWorkers where isManager = true').urlEncode() %>"
+    }
+  ],
+  "outboundData": {
+    "outboundEndPoints": [
+    ]
+  },
+  "presentation": {
+    "headerSize": "VPS_DEFAULT",
+    "pageType": "edit",
+    "title": {
+      "type": "title",
+      "label": "Manage Externals"
+    },
+    "body": {
+      "type": "section",
+      "horizontal": false,
+      "children": [
+        {
+          "type": "instanceList",
+          "id": "manager",
+          "label": "Manager",
+          "required": true,
+          "values": "<% workers.data %>",
+          "idKey": "id",
+          "displayKey": "descriptor"
+        },
+        {
+          "type": "text",
+          "id": "firstName",
+          "label": "First Name",
+          "required": true
+        },
+        {
+          "type": "text",
+          "id": "lastName",
+          "label": "Last Name",
+          "required": true
+        },
+        {
+          "type": "radioGroup",
+          "id": "workerType",
+          "label": "Contingent Worker Type",
+          "required": true,
+          "instanceList": [
+            {
+              "id": "office",
+              "descriptor": "Office-based external (e.g. consultant)"
+            },
+            {
+              "id": "field",
+              "descriptor": "Field-based external (e.g. installer)"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

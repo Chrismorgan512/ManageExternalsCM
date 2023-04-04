@@ -1,18 +1,22 @@
 {
-  "id": "home",
+  "id": "success",
+  "endPoints": [
+  ],
   "presentation": {
+    "headerSize": "VPS_DEFAULT",
     "title": {
       "type": "title",
       "label": "Workday Extend"
     },
     "body": {
       "type": "section",
+      "horizontal": false,
       "children": [
         {
-          "type": "richText",
-          "id": "hello",
-          "label": "Hello World!",
-          "value": "Welcome to your <b>Workday Extend</b> App. Deployed by the Workday Extend Plugin for IntelliJ."
+          "type": "text",
+          "id": "success",
+          "label": "Contract End Date Changed For:",
+          "value": ""
         }
       ]
     },
