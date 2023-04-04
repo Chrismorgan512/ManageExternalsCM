@@ -1,0 +1,37 @@
+{
+  "appProperties": [],
+  "dataProviders": [
+    {
+      "key": "common",
+      "value": "https://api.workday.com/common/v1"
+    },
+    {
+      "key": "wql",
+      "value": "https://api.workday.com/wql/v1"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "root",
+      "routingPattern": "/",
+      "page": {
+        "id": "home"
+      }
+    },
+    {
+      "id": "landing",
+      "routingPattern": "landing",
+      "page": {
+        "id": "landing"
+      }
+    },
+    {
+      "id": "addExternal",
+      "routingPattern": "addExternal",
+      "page": {
+        "id": "addExternal"
+      }
+    }
+  ],
+  "applicationId": "ManageExternalsCM_vvkjnn"
+}

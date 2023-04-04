@@ -1,5 +1,5 @@
 {
-  "id": "ManageExternalsCM",
+  "id": "ManageExternalsCM_vvkjnn",
   "languages": [
     {
       "code": "en-US",
@@ -14,8 +14,8 @@
       }
     ]
   },
-  "siteId": "ManageExternalsCM",
+  "siteId": "ManageExternalsCM_vvkjnn",
   "cdnEnabled": true,
   "siteProperties": [ ],
-  "applicationId": "ManageExternalsCM"
+  "applicationId": "ManageExternalsCM_vvkjnn"
 }
