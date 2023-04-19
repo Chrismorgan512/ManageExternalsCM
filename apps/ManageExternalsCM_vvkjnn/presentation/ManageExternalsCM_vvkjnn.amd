@@ -6,7 +6,7 @@
       "value": "https://api.workday.com/common/v1"
     },
     {
-      "key": "wql",
+      "key": "WQL",
       "value": "https://api.workday.com/wql/v1"
     }
   ],
@@ -30,6 +30,34 @@
       "routingPattern": "addExternal",
       "page": {
         "id": "addExternal"
+      }
+    },
+    {
+      "id": "requestExternalWorkerTransfer",
+      "routingPattern": "requestExternalWorkerTransfer",
+      "page": {
+        "id": "requestExternalWorkerTransfer"
+      }
+    },
+    {
+      "id": "changeExternalContract",
+      "routingPattern": "changeExternalContract",
+      "page": {
+        "id": "changeExternalContract"
+      }
+    },
+    {
+      "id": "updateExternalContactDetails",
+      "routingPattern": "updateExternalContactDetails",
+      "page": {
+        "id": "updateExternalContactDetails"
+      }
+    },
+    {
+      "id": "success",
+      "routingPattern": "success",
+      "page": {
+        "id": "success"
       }
     }
   ],

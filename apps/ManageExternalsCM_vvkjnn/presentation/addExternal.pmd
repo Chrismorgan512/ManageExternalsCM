@@ -2,7 +2,7 @@
   "id": "addExternal",
   "endPoints": [
     {
-      "baseUrlType": "wql",
+      "baseUrlType": "WQL",
       "name": "workers",
       "authType": "sso",
       "url": "<% '/data?query=' + ('SELECT workdayID as id, legalFullName as descriptor from allWorkers where isManager = true').urlEncode() %>"
